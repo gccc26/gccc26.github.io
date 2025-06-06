@@ -72,6 +72,11 @@
   box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
   outline: 0;
 }
+img {
+  pointer-events: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+}
     </style>
     <script>
 
@@ -102,6 +107,12 @@
         return result;
       }
       setInterval(updateCountdown, 1000);
+      
+     
+  document.addEventListener('contextmenu', event => {
+    event.preventDefault();
+  });
+
     </script>
   </head>
   <body>
