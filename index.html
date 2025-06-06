@@ -30,7 +30,7 @@
       function updateCountdown() {
         var countdownElement = document.getElementById("countdown");
         var now = new Date();
-        var endDate = new Date("2027-02-13T19:59:59");
+        var endDate = new Date("2025-06-15T9:59:59");
         var timeLeft = endDate - now;
         if (timeLeft < 0) {
           countdownElement.innerHTML = "Countdown finished!";
@@ -58,12 +58,14 @@
   </head>
   <body>
    <div style="border-radius: 15px; background: #000435; padding: 20px; width: auto; height: auto; text-align: center; justify-content: center; color: #ffffff; font-size: 20px; display: block; margin-left: auto; margin-right: auto; margin-top: 50px; margin-bottom: 50px;">
-    <img class="white-svg" src="assets/logo.svg" alt="NDC" style="width:150px"></img>
+    <img class="white-svg" src="assets/logo.svg" alt="GCCC" style="width:150px"></img>
     <h1 style="margin-top: 10px">Govt. City College, Chattogram</br>সরকারি সিটি কলেজ, চট্টগ্রাম</h1>
-    <h4></h4>
+    <h4>একাদশ শ্রেণির বার্ষিক পরীক্ষার আর বাকি</h4>
     <img src="clock.png" style="width:30px"> </img><a style="font-weight: 500; font-size: 30px;" id="countdown"></a>
     <p></p>
     <p></p>
+
+    <img id="fly" class="d-block mx-auto mb-4" style="width: 200px; height: auto;" src="assets/sir.jpg"></img>
    </div>
   </body>
   </html>
