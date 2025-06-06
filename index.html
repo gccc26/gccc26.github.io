@@ -24,13 +24,16 @@
       .white-svg {
             filter: brightness(0) invert(1); 
         }
+      #fly {
+      animation: fadeIn 2s ease-in-out forwards;
+      }
     </style>
     <script>
 
       function updateCountdown() {
         var countdownElement = document.getElementById("countdown");
         var now = new Date();
-        var endDate = new Date("2025-06-15T9:59:59");
+        var endDate = new Date("2025-06-15T09:59:59");
         var timeLeft = endDate - now;
         if (timeLeft < 0) {
           countdownElement.innerHTML = "Countdown finished!";
