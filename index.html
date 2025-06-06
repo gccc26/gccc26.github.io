@@ -45,13 +45,13 @@
         var endDate = new Date("2025-06-15T09:59:59");
         var timeLeft = endDate - now;
         if (timeLeft < 0) {
-          countdownElement.innerHTML = "Countdown finished!";
+          countdownElement.innerHTML = "সময় শেষ। পরীক্ষা দেও যাও";
         } else {
           var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
           var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-          countdownElement.innerHTML = "toBanglaDigits(days) + " দিন " + toBanglaDigits(hours) + " ঘন্টা " + toBanglaDigits(minutes) + " মিনিট " + toBanglaDigits(seconds) + " সেকেন্ড বাকি আছে।";
+          countdownElement.innerHTML = toBanglaDigits(days) + " দিন " + toBanglaDigits(hours) + " ঘন্টা " + toBanglaDigits(minutes) + " মিনিট " + toBanglaDigits(seconds) + " সেকেন্ড";
         }
       }
 
@@ -78,11 +78,11 @@
     <p></p>
 
     <img id="fly" class="d-block mx-auto mb-4" style="width:350px; height: auto;" src="assets/sir.jpg"></img>
-    <p>স্যার মাফ কইরেন। যদি মনে করেন‌এটা আপনি।</p>
+    <p>স্যার মাফ কইরেন। যদি মনে করেন‌ এটা আপনি। আমরা মুনকেও চিনি না‌। স্যারকেও চিনি না। মিলে গেলে তা সম্পূর্ণ কাকতালীয়।</p>
    
     <img id="fly" class="d-block mx-auto mb-4" style="width: 350px; height: auto;" src="assets/tab.jpg"></img>
      <p>ঈদের আগে অর্ডার করলে ১০% ডিসকাউন্ট। আপুদের জন্য আরও ৫% এক্সট্রা। ডেলিভারি ঈদের পর। ঠিক কোন ঈদের পর বলতে পারছি না‌</p>
-   
+   <p>গালাগালি বাদে বাকি সব পাঠাতে পারবেন দ@protonmail.com</p>
    </div>
   </body>
   </html>
