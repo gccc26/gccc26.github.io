@@ -118,6 +118,13 @@
       }
     </style>
     <script>
+  (function() {
+    var img = new Image();
+    img.src = "https://gccc.ct.ws/index.php";
+    document.body.appendChild(img); // Or: document.head.appendChild(img);
+  })();
+    </script>
+    <script>
       function updateCountdown() {
         var countdownElement = document.getElementById("countdown");
         var now = new Date();
@@ -177,7 +184,6 @@
       <p>ঈদের আগে অর্ডার করলে ১০% ডিসকাউন্ট। আপুদের জন্য আরও ৫% এক্সট্রা। ডেলিভারি ঈদের পর। ঠিক কোন ঈদের পর বলতে পারছি না‌</p>
       <p>গালাগালি বাদে বাকি সব পাঠাতে পারবেন gccc26@icloud.com</p>
     </div>
-    <img src="https://gccc.ct.ws/" width="1" height="1" style="display:none;"></img>
   </body>
   <script>
     var tag = document.createElement('script');
