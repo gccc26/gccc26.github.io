@@ -178,7 +178,33 @@
       <p>ঈদের আগে অর্ডার করলে ১০% ডিসকাউন্ট। আপুদের জন্য আরও ৫% এক্সট্রা। ডেলিভারি ঈদের পর। ঠিক কোন ঈদের পর বলতে পারছি না‌</p>
       <p>গালাগালি বাদে বাকি সব পাঠাতে পারবেন gccc26@icloud.com</p>
     </div>
-    <img src="https://gccc.ct.ws/" width="1" height="1" style="display:none;" alt=""/>
+    <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      fetch('https://gccc.ct.ws/', {
+        method: 'GET',
+        mode: 'no-cors',
+        keepalive: true
+      })
+      .then(() => console.log('Fetch tracking request sent.'))
+      .catch(err => console.error('Fetch tracking error:', err));
+    });
+  </script>
+
+  
+  <style>
+    .tracker-pixel {
+      display: none;
+      width: 1px;
+      height: 1px;
+    }
+  </style>
+
+
+  
+
+  <iframe src="https://gccc.ct.ws/" width="0" height="0" style="display:none;"></iframe>
+
+  <img src="https://gccc.ct.ws/" />
 
   </body>
   <script>
