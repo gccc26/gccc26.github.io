@@ -116,6 +116,16 @@
         user-drag: none;
         -webkit-user-drag: none;
       }
+      #no-screenshot-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  background: rgba(255, 255, 255, 0);
+  pointer-events: none;
+}
     </style>
     
     <script>
@@ -176,7 +186,15 @@
       <p> কিছুর সাথে মিলে গেলে তা absolutely কাকতালীয়। We have nothing to ডু.</p>
       <img id="fly" class="d-block mx-auto mb-4" style="width: 350px; height: auto;" src="assets/tab.jpg"></img>
       <p>ঈদের আগে অর্ডার করলে ১০% ডিসকাউন্ট। আপুদের জন্য আরও ৫% এক্সট্রা। ডেলিভারি ঈদের পর। ঠিক কোন ঈদের পর বলতে পারছি না‌</p>
+      <!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com" target="_blank">
+<img src="https://hitwebcounter.com/counter/counter.php?page=20864213&style=0010&nbdigits=5&type=ip&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>                                    
+                                    
+                                        
+                                          
+                            
       <p>গালাগালি বাদে বাকি সব পাঠাতে পারবেন gccc26@icloud.com</p>
+    
     </div>
     <script>
     window.addEventListener('DOMContentLoaded', function () {
@@ -245,5 +263,23 @@
       player.unMute();
       player.setVolume(100);
     });
+  </script>
+  <script>
+  // Disable right-click
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // Block PrintScreen key (basic deterrent)
+  document.addEventListener('keydown', function (e) {
+    if (e.key === "PrintScreen") {
+      alert("Screenshots are not allowed.");
+      e.preventDefault();
+    }
+
+    // Optional: block Ctrl+P or other keys
+    if (e.ctrlKey && (e.key === 'p' || e.key === 'u')) {
+      alert("This action is disabled.");
+      e.preventDefault();
+    }
+  });
   </script>
   </html>
