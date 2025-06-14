@@ -132,16 +132,16 @@
       function updateCountdown() {
         var countdownElement = document.getElementById("countdown");
         var now = new Date();
-        var endDate = new Date("2025-06-15T09:59:59");
+        var endDate = new Date("2025-06-15T13:44:59");
         var timeLeft = endDate - now;
         if (timeLeft < 0) {
-          countdownElement.innerHTML = "সময় শেষ। পরীক্ষা দেও যাও";
+          countdownElement.innerHTML = "সময় শেষ। পরীক্ষা দেও, যাও!";
         } else {
           var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
           var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-          countdownElement.innerHTML = toBanglaDigits(days) + " দিন " + toBanglaDigits(hours) + " ঘন্টা " + toBanglaDigits(minutes) + " মিনিট " + toBanglaDigits(seconds) + " সেকেন্ড";
+          countdownElement.innerHTML = "শুরু হতে আর বাকি" + toBanglaDigits(days) + " দিন " + toBanglaDigits(hours) + " ঘন্টা " + toBanglaDigits(minutes) + " মিনিট " + toBanglaDigits(seconds) + " সেকেন্ড";
         }
       }
 
@@ -166,8 +166,9 @@
       <img id="fly" class="white-svg" src="assets/logo.svg" alt="GCCC" style="width:150px"></img>
       <h1 style="margin-top: 10px; margin-bottom: 20px; padding-left: 15px;">Govt. City College, Chattogram </br>সরকারি সিটি কলেজ, চট্টগ্রাম </h1>
       <h1 style="margin-top: 10px; padding-left: 15px;">
-        <b>একাদশ শ্রেণির বার্ষিক পরীক্ষার আর বাকি</b>
-     </h1>
+        <b>একাদশ শ্রেণির বার্ষিক পরীক্ষার</b></h1>
+        <h2 style="opacity: 0.8;">প্রথম পরীক্ষা:</h2></br>
+        <h1>তথ্য ও যোগাযোগ প্রযুক্তি</h1>
       <img src="assets/clock.png" style="width:30px"></img>
       <a style="font-weight: 500; font-size: 30px;" id="countdown"></a>
       <a href="https://gccc.edu.bd/blog/একাদশ-শ্রেণির-বার্ষিক-পর-2/" class="btn btn-primary w-13" style="margin-top: 10px; margin-bottom: 20px; padding-left: 15px;">বিশ্বাস হয় না? রুটিন দেখবা?</a>
