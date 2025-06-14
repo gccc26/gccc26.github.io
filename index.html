@@ -46,8 +46,107 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
+   
+ <style>
+ 	.message-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.message-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 320px;
+  padding: 16px;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-top-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sender-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.message-time {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.message-text {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 0;
+  color: #111827;
+}
+
+.message-status {
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.dropdown-button {
+  align-self: center;
+  padding: 8px;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  color: #6b7280;
+}
+
+.dropdown-menu {
+  display: none; /* Set to block when visible */
+  position: absolute;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 160px;
+  z-index: 10;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #374151;
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+ 	
       body {
         font-family: 'Tiro Bangla', serif;
         text-align: center;
@@ -127,6 +226,17 @@
   background: rgba(255, 255, 255, 0);
   pointer-events: none;
 }
+@layer components {
+  .custom-message {
+    border: 1px solid red;
+    font-style: italic;
+    /* Add more custom styles as needed */
+  }
+
+  .custom-message span {
+    color: blue;
+  }
+}
     </style>
     
     <script>
@@ -167,7 +277,7 @@
       <img id="fly" class="white-svg" src="assets/logo.svg" alt="GCCC" style="width:150px"></img>
       <h1 style="margin-top: 10px; margin-bottom: 20px; padding-left: 15px;">Govt. City College, Chattogram </br>সরকারি সিটি কলেজ, চট্টগ্রাম </h1>
       <h1 style="margin-top: 10px; padding-left: 15px;"><b>একাদশ শ্রেণির বার্ষিক পরীক্ষা</b></h1>
-      <p style="opacity: 0.8;">প্রথম পরীক্ষা:</p></br><p>তথ্য ও যোগাযোগ প্রযুক্তি</p>
+      <p style="opacity: 0.8;">প্রথম পরীক্ষা:</p><b>তথ্য ও যোগাযোগ প্রযুক্তি</b></br>
       <img src="assets/clock.png" style="width:30px"></img>
       <a style="font-weight: 500; font-size: 30px;" id="countdown"></a>
       <a href="https://gccc.edu.bd/blog/একাদশ-শ্রেণির-বার্ষিক-পর-2/" class="btn btn-primary w-13" style="margin-top: 10px; margin-bottom: 20px; padding-left: 15px;">বিশ্বাস হয় না? রুটিন দেখবা?</a>
@@ -177,42 +287,32 @@
       <button id="unmuteBtn" class="btn btn-primary w-13" style="margin-top: 10px; margin-bottom: 20px; padding-left: 15px;">এই খুশিতে একটা গান শুনবা? ক্লিক কর</button>
       </br><span style="opacity: 0.7; font-size: smaller;">বি. দ্র: স্টারলিংক এর নেট ছাড়া এই গান লোড হবে না।</span></br>
       <img id="fly" src="assets/eid.png" style="width:150px"></img>
-      <div class="flex items-start gap-2.5">
-   <img class="w-8 h-8 rounded-full" src="assets/logo.svg" alt="image">
-   <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
-      <div class="flex items-center space-x-2 rtl:space-x-reverse">
-         <span class="text-sm font-semibold text-gray-900 dark:text-white">সাইট অ্যাডমিন</span>
-         <span class="text-sm font-normal text-gray-500 dark:text-gray-400">03:25</span>
-      </div>
-      <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">পরীক্ষার জন্য শুভকামনা 😃😃😃</p>
-      <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
-   </div>
-   <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" data-dropdown-placement="bottom-start" class="inline-flex self-center items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-800 dark:focus:ring-gray-600" type="button">
-      <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
-         <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
-      </svg>
-   </button>
-   <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-40 dark:bg-gray-700 dark:divide-gray-600">
-      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
-         <li>
-            <a href="mailto:gccc26@icloud.com" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Reply</a>
-         </li>
-         <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Forward</a>
-         </li>
-         <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Copy</a>
-         </li>
-         <li>
-            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
-         </li>
-         <li>
-            <a href="mailto:gccc26@icloud.com" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">গুলি করুন</a>
-         </li>
-      </ul>
-   </div>
+      
+<div class="message-wrapper">
+  <img class="avatar" src="assets/logo.svg" alt="image">
+  <div class="message-box">
+    <div class="message-header">
+      <span class="sender-name">সাইট অ্যাডমিন</span>
+      <span class="message-time">03:25</span>
+    </div>
+    <p class="message-text">পরীক্ষার জন্য শুভকামনা 😃😃😃</p>
+    <span class="message-status">Delivered</span>
+  </div>
+  <button class="dropdown-button" type="button">
+    <svg class="dropdown-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+      <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+    </svg>
+  </button>
+  <div class="dropdown-menu">
+    <ul>
+      <li><a href="mailto:gccc26@icloud.com">Reply</a></li>
+      <li><a href="#">Forward</a></li>
+      <li><a href="#">Copy</a></li>
+      <li><a href="#">Report</a></li>
+      <li><a href="mailto:gccc26@icloud.com">গুলি করুন</a></li>
+    </ul>
+  </div>
 </div>
- 
       <img id="fly" class="d-block mx-auto mb-4" style="width:350px; height: auto;" src="assets/sir.jpg"></img>
       <del><span style="color: red; font-weight: 600;">###HACKED### শ্রদ্ধেয় গণিত শিক্ষকের আপত্তিকর ছবি থাকায় <b>Full-paid Red Card Holder Hackers (FRCH)</b> কর্তৃক ছবিটি blur করে দেওয়া হয়েছে। </span></del>
       <span style="font-weight: 800;">==RECOVERED==</span>
